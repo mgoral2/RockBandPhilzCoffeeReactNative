@@ -8,6 +8,24 @@ const windowHeight = Dimensions.get('window').height;
 
 var image1 = require('./images/1.jpg');
 
+import Card from './Card.tsx';
+
+const  PracticeScrollView = () => {
+
+  return(
+    <ScrollView
+    horizontal
+    >
+      <Card passedImage = {image1}/>
+      <Card passedImage = {image1}/>
+      <Card />
+      <Card passedImage = {image1}/>
+      <Card passedImage = {image1}/>
+    </ScrollView>
+  )
+}
+
+/*
 const PracticeScrollView = () => {
 
   return (
@@ -60,5 +78,6 @@ const PracticeScrollView = () => {
     </ScrollView>
   )
 }
+*/
 
 export default PracticeScrollView;
