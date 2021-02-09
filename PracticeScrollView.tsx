@@ -1,7 +1,8 @@
 //PracticeScrollView.tsx
 
-import React from "react";
-import {Dimensions, View, ScrollView, StyleSheet, Text, Image } from "react-native";
+import React, {useEffect, useRef} from "react";
+import {Dimensions, View, ScrollView,
+  StyleSheet, Text, Image, Button } from "react-native";
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
@@ -13,11 +14,32 @@ var image4 = require('./images/4.jpg');
 var image5 = require('./images/5.jpg');
 
 import Card from './Card.tsx';
-
+/*
+<ScrollView style={styles.container} ref={(scroller) => {this.scroller = scroller}}>
+        <View style={[styles.screen, styles.screenA]}>
+*/
 const PracticeScrollView = () => {
+/*
+    scrollToMiddleHorizontal = () => {
+    this.horiScroll.scrollTo({x: 50});
+  };
+*/
+
+  const inputEl = useRef(null);
+
+  const onButtonClick = () => {
+    inputEl.current.scrollTo({x: windowWidth*2, animated: false});
+  }
 
   return(
+    <View>
+    <Button
+    onPress={onButtonClick}
+    title="Scroll To Middle"
+    />
+
     <ScrollView
+    ref={inputEl}
     horizontal
     snapToInterval = {windowWidth}
     >
@@ -39,7 +61,7 @@ const PracticeScrollView = () => {
       </ScrollView>
 
       <ScrollView>
-        <Card passedImage = {image1}/>
+        <Card passedImage = {image3}/>
         <Card passedImage = {image2}/>
         <Card passedImage = {image3}/>
         <Card passedImage = {image4}/>
@@ -61,9 +83,9 @@ const PracticeScrollView = () => {
         <Card passedImage = {image4}/>
         <Card passedImage = {image5}/>
       </ScrollView>
-
 
     </ScrollView>
+    </View>
   )
 }
 /*

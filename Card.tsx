@@ -31,11 +31,10 @@ const styles = StyleSheet.create({
   },
   image:  {
     borderRadius: 16,
-          margin: 32,
-          flex: 1,
-
-          padding: 16,
-          justifyContent: "space-between",
+    flex: 1,
+    margin: 32,
+    padding: 16,
+    justifyContent: "space-between",
   }
 })
 
