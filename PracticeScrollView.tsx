@@ -18,17 +18,39 @@ import Card from './Card.tsx';
 <ScrollView style={styles.container} ref={(scroller) => {this.scroller = scroller}}>
         <View style={[styles.screen, styles.screenA]}>
 */
-const PracticeScrollView = () => {
-/*
-    scrollToMiddleHorizontal = () => {
-    this.horiScroll.scrollTo({x: 50});
-  };
-*/
+function PracticeScrollView() {
 
   const inputEl = useRef(null);
+  const sv1 = useRef(null);
+  const sv2 = useRef(null);
+  const sv3 = useRef(null);
+  const sv4 = useRef(null);
+  const sv5 = useRef(null);
 
+
+
+/*
+  useEffect(() =>  {
+    onButtonClick();
+  })
+*/
+/*
   const onButtonClick = () => {
     inputEl.current.scrollTo({x: windowWidth*2, animated: false});
+  }
+*/
+
+  const onButtonClick = () => {
+    console.log("B1: " + b1);
+  }
+
+  const onEndScroll = () => {
+
+    sv1.current.scrollTo({y: 0, animated: false});
+    sv2.current.scrollTo({y: 0, animated: false});
+    sv3.current.scrollTo({y: 0, animated: false});
+    sv4.current.scrollTo({y: 0, animated: false});
+    sv5.current.scrollTo({y: 0, animated: false});
   }
 
   return(
@@ -42,9 +64,13 @@ const PracticeScrollView = () => {
     ref={inputEl}
     horizontal
     snapToInterval = {windowWidth}
+    onMomentumScrollEnd={onEndScroll}
     >
 
-      <ScrollView>
+      <ScrollView
+      ref = {sv1}
+      
+      >
         <Card passedImage = {image1}/>
         <Card passedImage = {image2}/>
         <Card passedImage = {image3}/>
@@ -52,7 +78,9 @@ const PracticeScrollView = () => {
         <Card passedImage = {image5}/>
       </ScrollView>
 
-      <ScrollView>
+      <ScrollView
+      ref = {sv2}
+      >
         <Card passedImage = {image1}/>
         <Card passedImage = {image2}/>
         <Card passedImage = {image3}/>
@@ -60,7 +88,9 @@ const PracticeScrollView = () => {
         <Card passedImage = {image5}/>
       </ScrollView>
 
-      <ScrollView>
+      <ScrollView
+      ref = {sv3}
+      >
         <Card passedImage = {image3}/>
         <Card passedImage = {image2}/>
         <Card passedImage = {image3}/>
@@ -68,7 +98,9 @@ const PracticeScrollView = () => {
         <Card passedImage = {image5}/>
       </ScrollView>
 
-      <ScrollView>
+      <ScrollView
+      ref = {sv4}
+      >
         <Card passedImage = {image1}/>
         <Card passedImage = {image2}/>
         <Card passedImage = {image3}/>
@@ -76,7 +108,9 @@ const PracticeScrollView = () => {
         <Card passedImage = {image5}/>
       </ScrollView>
 
-      <ScrollView>
+      <ScrollView
+      ref = {sv5}
+      >
         <Card passedImage = {image1}/>
         <Card passedImage = {image2}/>
         <Card passedImage = {image3}/>
