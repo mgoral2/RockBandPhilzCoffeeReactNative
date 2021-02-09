@@ -27,6 +27,8 @@ function PracticeScrollView() {
   const sv4 = useRef(null);
   const sv5 = useRef(null);
 
+  var b1 = false;
+
 
 
 /*
@@ -45,12 +47,15 @@ function PracticeScrollView() {
   }
 
   const onEndScroll = () => {
-
+    if (b1 == false) {
     sv1.current.scrollTo({y: 0, animated: false});
+  }
     sv2.current.scrollTo({y: 0, animated: false});
     sv3.current.scrollTo({y: 0, animated: false});
     sv4.current.scrollTo({y: 0, animated: false});
     sv5.current.scrollTo({y: 0, animated: false});
+
+    b1 =  false;
   }
 
   return(
@@ -69,7 +74,7 @@ function PracticeScrollView() {
 
       <ScrollView
       ref = {sv1}
-      
+      onScroll = { () => {b1 = true}}
       >
         <Card passedImage = {image1}/>
         <Card passedImage = {image2}/>
