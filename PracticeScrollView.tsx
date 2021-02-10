@@ -3,6 +3,13 @@
 import React, {useEffect, useRef} from "react";
 import {Dimensions, View, ScrollView,
   StyleSheet, Text, Image, Button } from "react-native";
+import Animated, {
+  useAnimatedScrollHandler,
+  useAnimatedStyle,
+  useSharedValue,
+  interpolateColor,
+} from "react-native-reanimated";
+
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
@@ -20,6 +27,14 @@ import Card from './Card.tsx';
 */
 function PracticeScrollView() {
 
+  const translateHoriz = useSharedValue(0);
+
+  const onHorizontalScroll = useAnimatedScrollhandler({
+    onScroll: (event)  => {
+      translateHoriz.value = event.contentOffset.x;
+    },
+  });
+
   const inputEl = useRef(null);
   const sv1 = useRef(null);
   const sv2 = useRef(null);
@@ -29,20 +44,8 @@ function PracticeScrollView() {
 
 
 
-
-/*
-  useEffect(() =>  {
-    onButtonClick();
-  })
-*/
-/*
   const onButtonClick = () => {
-    inputEl.current.scrollTo({x: windowWidth*2, animated: false});
-  }
-*/
-
-  const onButtonClick = () => {
-    console.log("B1: " + b1);
+    console.log("B1:");
   }
 
   const onEndScroll = () => {
@@ -55,13 +58,14 @@ function PracticeScrollView() {
   }
 
   return(
-    <View>
+    <Animated.View>
     <Button
     onPress={onButtonClick}
     title="Scroll To Middle"
     />
 
-    <ScrollView
+    <Animated.ScrollView
+    onScroll={onScroll}
     ref={inputEl}
     horizontal
     snapToInterval = {windowWidth}
@@ -118,8 +122,8 @@ function PracticeScrollView() {
         <Card passedImage = {image5}/>
       </ScrollView>
 
-    </ScrollView>
-    </View>
+    </Animated.ScrollView>
+    </Animated.View>
   )
 }
 /*
