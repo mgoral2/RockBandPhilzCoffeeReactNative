@@ -44,6 +44,12 @@ var ella3 = require('./images/ella3.jpg');
 var ella4 = require('./images/ella4.jpeg');
 var ella5 = require('./images/ella5.jpg');
 
+var luke1 = require('./images/luke1.jpeg');
+var luke2 = require('./images/luke2.jpg');
+var luke3 = require('./images/luke3.jpg');
+var luke4 = require('./images/luke4.jpg');
+var luke5 = require('./images/luke5.jpg');
+
 import Card from './Card.tsx';
 /*
 <ScrollView style={styles.container} ref={(scroller) => {this.scroller = scroller}}>
@@ -156,11 +162,11 @@ function PracticeScrollView() {
       <ScrollView
       ref = {sv5}
       >
-        <Card passedImage = {image1}/>
-        <Card passedImage = {image2}/>
-        <Card passedImage = {image3}/>
-        <Card passedImage = {image4}/>
-        <Card passedImage = {image5}/>
+        <Card passedImage = {luke1}/>
+        <Card passedImage = {luke2}/>
+        <Card passedImage = {luke3}/>
+        <Card passedImage = {luke4}/>
+        <Card passedImage = {luke5}/>
       </ScrollView>
 
     </Animated.ScrollView>
