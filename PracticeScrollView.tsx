@@ -50,6 +50,8 @@ var luke3 = require('./images/luke3.jpg');
 var luke4 = require('./images/luke4.jpg');
 var luke5 = require('./images/luke5.jpg');
 
+var backgroundColors = ["lightcoral", "lightseagreen", "lightsalmon", "magenta", "lightskyblue"];
+
 import Card from './Card.tsx';
 /*
 <ScrollView style={styles.container} ref={(scroller) => {this.scroller = scroller}}>
@@ -104,8 +106,20 @@ function PracticeScrollView() {
   }
   }
 
+  const arr = [0,1,2,3,4];
+
+  const backgroundColorChange = useAnimatedStyle(() => {
+    const backgroundColor = interpolateColor(
+      translateHoriz.value,
+      arr.map((count) =>  windowWidth*count),
+      arr.map((count) => backgroundColors[count])
+    );
+    return {backgroundColor};
+  })
+
   return(
-    <Animated.View>
+    <Animated.View
+    style = {backgroundColorChange}>
     <Button
     onPress={onButtonClick}
     title="Scroll To Middle"
