@@ -20,6 +20,30 @@ var image3 = require('./images/3.jpg');
 var image4 = require('./images/4.jpg');
 var image5 = require('./images/5.jpg');
 
+var taylor1 = require('./images/taylor1.jpg');
+var taylor2 = require('./images/taylor2.png');
+var taylor3 = require('./images/taylor3.jpg');
+var taylor4 = require('./images/taylor4.jpeg');
+var taylor5 = require('./images/taylor5.jpg');
+
+var weeknd1 = require('./images/weeknd1.jpg');
+var weeknd2 = require('./images/weeknd2.jpg');
+var weeknd3 = require('./images/weeknd3.jpeg');
+var weeknd4 = require('./images/weeknd4.jpg');
+var weeknd5 = require('./images/weeknd5.jpg');
+
+var matchbox1 = require('./images/matchbox1.jpg');
+var matchbox2 = require('./images/matchbox2.jpg');
+var matchbox3 = require('./images/matchbox3.jpg');
+var matchbox4 = require('./images/matchbox4.jpg');
+var matchbox5 = require('./images/matchbox5.jpg');
+
+var ella1 = require('./images/ella1.jpg');
+var ella2 = require('./images/ella2.jpeg');
+var ella3 = require('./images/ella3.jpg');
+var ella4 = require('./images/ella4.jpeg');
+var ella5 = require('./images/ella5.jpg');
+
 import Card from './Card.tsx';
 /*
 <ScrollView style={styles.container} ref={(scroller) => {this.scroller = scroller}}>
@@ -92,41 +116,41 @@ function PracticeScrollView() {
       <ScrollView
       ref = {sv1}
       >
-        <Card passedImage = {image1}/>
-        <Card passedImage = {image2}/>
-        <Card passedImage = {image3}/>
-        <Card passedImage = {image4}/>
-        <Card passedImage = {image5}/>
+        <Card passedImage = {taylor1}/>
+        <Card passedImage = {taylor2}/>
+        <Card passedImage = {taylor3}/>
+        <Card passedImage = {taylor4}/>
+        <Card passedImage = {taylor5}/>
       </ScrollView>
 
       <ScrollView
       ref = {sv2}
       >
-        <Card passedImage = {image1}/>
-        <Card passedImage = {image2}/>
-        <Card passedImage = {image3}/>
-        <Card passedImage = {image4}/>
-        <Card passedImage = {image5}/>
+        <Card passedImage = {weeknd1}/>
+        <Card passedImage = {weeknd2}/>
+        <Card passedImage = {weeknd3}/>
+        <Card passedImage = {weeknd4}/>
+        <Card passedImage = {weeknd5}/>
       </ScrollView>
 
       <ScrollView
       ref = {sv3}
       >
-        <Card passedImage = {image3}/>
-        <Card passedImage = {image2}/>
-        <Card passedImage = {image3}/>
-        <Card passedImage = {image4}/>
-        <Card passedImage = {image5}/>
+        <Card passedImage = {matchbox1}/>
+        <Card passedImage = {matchbox2}/>
+        <Card passedImage = {matchbox3}/>
+        <Card passedImage = {matchbox4}/>
+        <Card passedImage = {matchbox5}/>
       </ScrollView>
 
       <ScrollView
       ref = {sv4}
       >
-        <Card passedImage = {image1}/>
-        <Card passedImage = {image2}/>
-        <Card passedImage = {image3}/>
-        <Card passedImage = {image4}/>
-        <Card passedImage = {image5}/>
+        <Card passedImage = {ella1}/>
+        <Card passedImage = {ella2}/>
+        <Card passedImage = {ella3}/>
+        <Card passedImage = {ella4}/>
+        <Card passedImage = {ella5}/>
       </ScrollView>
 
       <ScrollView
