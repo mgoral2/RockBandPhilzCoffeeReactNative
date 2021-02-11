@@ -27,9 +27,9 @@ import Card from './Card.tsx';
 */
 function PracticeScrollView() {
 
-  const translateHoriz = useSharedValue(0);
+  const translateHoriz = useSharedValue(5);
 
-  const onHorizontalScroll = useAnimatedScrollhandler({
+  const onHorizontalScroll = useAnimatedScrollHandler({
     onScroll: (event)  => {
       translateHoriz.value = event.contentOffset.x;
     },
@@ -45,16 +45,33 @@ function PracticeScrollView() {
 
 
   const onButtonClick = () => {
-    console.log("B1:");
+    console.log("translateHoriz: " + translateHoriz.value);
   }
 
   const onEndScroll = () => {
 
+    console.log("in end scroll: ", + translateHoriz.value);
+
+    if (!((-10 <= translateHoriz.value) &&  (translateHoriz.value <= 10))) {
     sv1.current.scrollTo({y: 0, animated: false});
-    sv2.current.scrollTo({y: 0, animated: false});
-    sv3.current.scrollTo({y: 0, animated: false});
+    //console.log("one hit: " + translateHoriz.value);
+  }
+    if(!((windowWidth-10 <= translateHoriz.value) && (windowWidth+10 >= translateHoriz.value))) {
+      //console.log("Two hit");
+      sv2.current.scrollTo({y: 0, animated: false});
+  }
+    if(!(((windowWidth*2)-10 <= translateHoriz.value) && ((windowWidth*2)+10 >= translateHoriz.value))) {
+      //console.log("three hit");
+      sv3.current.scrollTo({y: 0, animated: false});
+  }
+    if(!(((windowWidth*3)-10 <= translateHoriz.value) && ((windowWidth*3)+10 >= translateHoriz.value))) {
+      //console.log("four hit");
     sv4.current.scrollTo({y: 0, animated: false});
+  }
+    if(!(((windowWidth*4)-10 <= translateHoriz.value) && ((windowWidth*4)+10 >= translateHoriz.value))) {
+      console.log("five hit");
     sv5.current.scrollTo({y: 0, animated: false});
+  }
   }
 
   return(
@@ -65,7 +82,7 @@ function PracticeScrollView() {
     />
 
     <Animated.ScrollView
-    onScroll={onScroll}
+    onScroll={onHorizontalScroll}
     ref={inputEl}
     horizontal
     snapToInterval = {windowWidth}
