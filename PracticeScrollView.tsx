@@ -75,14 +75,15 @@ function PracticeScrollView() {
   const sv5 = useRef(null);
 
 
-
+/*
   const onButtonClick = () => {
     console.log("translateHoriz: " + translateHoriz.value);
   }
+*/
 
   const onEndScroll = () => {
 
-    console.log("in end scroll: ", + translateHoriz.value);
+    //console.log("in end scroll: ", + translateHoriz.value);
 
     if (!((-10 <= translateHoriz.value) &&  (translateHoriz.value <= 10))) {
     sv1.current.scrollTo({y: 0, animated: false});
@@ -101,7 +102,7 @@ function PracticeScrollView() {
     sv4.current.scrollTo({y: 0, animated: false});
   }
     if(!(((windowWidth*4)-10 <= translateHoriz.value) && ((windowWidth*4)+10 >= translateHoriz.value))) {
-      console.log("five hit");
+      //console.log("five hit");
     sv5.current.scrollTo({y: 0, animated: false});
   }
   }
